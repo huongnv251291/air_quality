@@ -1,34 +1,42 @@
 {
   "project_info": {
-    "project_number": "486013432718",
-    "firebase_url": "https://base-source.firebaseio.com",
-    "project_id": "base-source",
-    "storage_bucket": "base-source.appspot.com"
+    "project_number": "153188318579",
+    "firebase_url": "https://airquality-742a2.firebaseio.com",
+    "project_id": "airquality-742a2",
+    "storage_bucket": "airquality-742a2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:486013432718:android:b09788155fda1218512adf",
+        "mobilesdk_app_id": "1:153188318579:android:c86e183039b8f8c867d906",
         "android_client_info": {
-          "package_name": "com.tohsoft.app"
+          "package_name": "com.tohsoft.airquality"
         }
       },
       "oauth_client": [
         {
-          "client_id": "486013432718-msio1pi80c4be3b38kduc9d069ta7u4k.apps.googleusercontent.com",
+          "client_id": "153188318579-q03dfneahg0of952lddathe0fp0o17hv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tohsoft.airquality",
+            "certificate_hash": "c7ebce7f8253f0d59bbf6bd1e41e6072225a0709"
+          }
+        },
+        {
+          "client_id": "153188318579-ukfk135kvvofkhpvovn2g4ha00f0bbhg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCYAt_nwiS5SQaR-tcFpi2cE7ZjAc2lmq8"
+          "current_key": "AIzaSyAln2qqVMf_hMh5uASuhZyWaxEHN50nUK8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "486013432718-msio1pi80c4be3b38kduc9d069ta7u4k.apps.googleusercontent.com",
+              "client_id": "153188318579-ukfk135kvvofkhpvovn2g4ha00f0bbhg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
