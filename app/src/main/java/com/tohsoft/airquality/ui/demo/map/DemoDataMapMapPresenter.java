@@ -83,7 +83,7 @@ public class DemoDataMapMapPresenter<V extends DemoDataMapMvpView> extends BaseP
     protected void updateLocation(LatLng toLatLng) {
         CameraPosition camPos = new CameraPosition.Builder()
                 .target(toLatLng)
-                .zoom(15)
+                .zoom(10)
                 .build();
         CameraUpdate camUpd3 = CameraUpdateFactory.newCameraPosition(camPos);
         mMap.moveCamera(camUpd3);
