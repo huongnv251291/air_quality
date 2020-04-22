@@ -7,17 +7,17 @@ import com.google.gson.annotations.SerializedName;
 public class RankingCountry {
 
     @SerializedName("cities")
-    private List<City> mCities;
+    private List<CityRanking> mCities;
     @SerializedName("time")
     private String mTime;
     @SerializedName("version")
     private Long mVersion;
 
-    public List<City> getCities() {
+    public List<CityRanking> getCities() {
         return mCities;
     }
 
-    public void setCities(List<City> cities) {
+    public void setCities(List<CityRanking> cities) {
         mCities = cities;
     }
 
@@ -37,4 +37,12 @@ public class RankingCountry {
         mVersion = version;
     }
 
+    @Override
+    public String toString() {
+        return "RankingCountry{" +
+                "mCities=" + mCities +
+                ", mTime='" + mTime + '\'' +
+                ", mVersion=" + mVersion +
+                '}';
+    }
 }

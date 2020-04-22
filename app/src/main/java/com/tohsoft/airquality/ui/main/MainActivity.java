@@ -1,7 +1,6 @@
 package com.tohsoft.airquality.ui.main;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,8 +28,11 @@ import com.tohsoft.airquality.helper.FirebaseRemoteConfigHelper;
 import com.tohsoft.airquality.services.BackgroundService;
 import com.tohsoft.airquality.ui.base.BaseActivity;
 import com.tohsoft.airquality.ui.base.BasePresenter;
-import com.tohsoft.airquality.ui.history.HistoryActivity;
-import com.tohsoft.airquality.ui.settings.SettingsFragment;
+import com.tohsoft.airquality.ui.demo.current.FragmentDemoDataCurrent;
+import com.tohsoft.airquality.ui.demo.forecast.FragmentDemoDataForeCast;
+import com.tohsoft.airquality.ui.demo.history.FragmentDemoDataHistory;
+import com.tohsoft.airquality.ui.demo.map.FragmentDemoDataMap;
+import com.tohsoft.airquality.ui.demo.ranking.FragmentDemoDataRanking;
 import com.tohsoft.airquality.utils.AutoStartManagerUtil;
 import com.tohsoft.airquality.utils.ads.AdViewWrapper;
 import com.tohsoft.airquality.utils.ads.AdsConstants;
@@ -48,12 +50,18 @@ import butterknife.OnClick;
 
 
 public class MainActivity extends BaseActivity<MainMvpPresenter> implements MainMvpView {
-    @BindView(R.id.fr_bottom_banner) FrameLayout frBottomBanner;
-    @BindView(R.id.fr_splash) View frSplash;
-    @BindView(R.id.iv_splash) ImageView ivSplash;
-    @BindView(R.id.ll_fake_progress) View llFakeProgress;
-    @BindView(R.id.iv_warning) View ivWarning;
-
+    @BindView(R.id.fr_bottom_banner)
+    FrameLayout frBottomBanner;
+    @BindView(R.id.fr_splash)
+    View frSplash;
+    @BindView(R.id.iv_splash)
+    ImageView ivSplash;
+    @BindView(R.id.ll_fake_progress)
+    View llFakeProgress;
+    @BindView(R.id.iv_warning)
+    View ivWarning;
+//    @BindView(R.id.holder_demo)
+//    ViewPager viewPager;
     private InterstitialOPAHelper mInterstitialOPAHelper;
     private AdViewWrapper mAdViewWrapper;
     private AlertDialog mDialogExitApp;
@@ -324,15 +332,29 @@ public class MainActivity extends BaseActivity<MainMvpPresenter> implements Main
         }
     }
 
-    @OnClick({R.id.btn_settings, R.id.btn_history, R.id.iv_warning})
+    @OnClick({R.id.btn_settings, R.id.btn_history,R.id.btn_forecast,R.id.btn_map,R.id.btn_ranking, R.id.iv_warning})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.btn_settings:
-                FragmentUtils.add(getSupportFragmentManager(), SettingsFragment.newInstance(),
+                FragmentUtils.add(getSupportFragmentManager(),new FragmentDemoDataCurrent(),
+                        android.R.id.content, true, R.anim.fade_in, R.anim.fade_out);
+                break;
+            case R.id.btn_forecast:
+                FragmentUtils.add(getSupportFragmentManager(),new FragmentDemoDataForeCast(),
+                        android.R.id.content, true, R.anim.fade_in, R.anim.fade_out);
+                break;
+            case R.id.btn_map:
+                FragmentUtils.add(getSupportFragmentManager(),new FragmentDemoDataMap(),
+                        android.R.id.content, true, R.anim.fade_in, R.anim.fade_out);
+                break;
+            case R.id.btn_ranking:
+                FragmentUtils.add(getSupportFragmentManager(),new FragmentDemoDataRanking(),
                         android.R.id.content, true, R.anim.fade_in, R.anim.fade_out);
                 break;
             case R.id.btn_history:
-                startActivity(new Intent(mContext, HistoryActivity.class));
+                FragmentUtils.add(getSupportFragmentManager(),new FragmentDemoDataHistory(),
+                        android.R.id.content, true, R.anim.fade_in, R.anim.fade_out);
+//                startActivity(new Intent(mContext, HistoryActivity.class));
                 break;
             case R.id.iv_warning:
                 AutoStartManagerUtil.showDialogEnableAutoStart(getContext(), enableAutoStartListener);

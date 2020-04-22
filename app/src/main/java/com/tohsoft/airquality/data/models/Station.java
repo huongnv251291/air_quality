@@ -1,71 +1,29 @@
 
 package com.tohsoft.airquality.data.models;
 
-import java.util.List;
-
 import com.google.gson.annotations.SerializedName;
 
 public class Station {
 
-    @SerializedName("a")
-    private String mA;
-    @SerializedName("g")
-    private List<Double> mG;
-    @SerializedName("n")
-    private String mN;
-    @SerializedName("t")
-    private String mT;
-    @SerializedName("u")
-    private String mU;
-    @SerializedName("x")
-    private String mX;
+    @SerializedName("name")
+    private String mName;
+    @SerializedName("time")
+    private String mTime;
 
-    public String getA() {
-        return mA;
+    public String getName() {
+        return mName;
     }
 
-    public void setA(String a) {
-        mA = a;
+    public void setName(String name) {
+        mName = name;
     }
 
-    public List<Double> getG() {
-        return mG;
+    public String getTime() {
+        return mTime;
     }
 
-    public void setG(List<Double> g) {
-        mG = g;
-    }
-
-    public String getN() {
-        return mN;
-    }
-
-    public void setN(String n) {
-        mN = n;
-    }
-
-    public String getT() {
-        return mT;
-    }
-
-    public void setT(String t) {
-        mT = t;
-    }
-
-    public String getU() {
-        return mU;
-    }
-
-    public void setU(String u) {
-        mU = u;
-    }
-
-    public String getX() {
-        return mX;
-    }
-
-    public void setX(String x) {
-        mX = x;
+    public void setTime(String time) {
+        mTime = time;
     }
 
 }

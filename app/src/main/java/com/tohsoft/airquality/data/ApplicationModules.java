@@ -5,7 +5,10 @@ import android.content.Context;
 
 import com.tohsoft.airquality.data.local.preference.PreferencesHelper;
 import com.tohsoft.airquality.data.network.DataManager;
+import com.tohsoft.airquality.data.network.RemoteAQIApiService;
 import com.tohsoft.airquality.data.network.RemoteApiService;
+import com.tohsoft.airquality.data.network.RemoteFullDataApiService;
+import com.tohsoft.airquality.data.network.RemoteRankingApiService;
 
 /**
  * Created by Phong on 3/1/2017.
@@ -42,10 +45,12 @@ public class ApplicationModules {
      */
     public void initModules(Context context) {
         mContext = context;
-
         mPreferencesHelper = new PreferencesHelper(context);
         mDataManager = new DataManager(
                 RemoteApiService.Creator.newRetrofitInstance().create(RemoteApiService.class),
+                RemoteAQIApiService.Creator.newRetrofitInstance().create(RemoteAQIApiService.class),
+                RemoteRankingApiService.Creator.newRetrofitInstance().create(RemoteRankingApiService.class),
+                RemoteFullDataApiService.Creator.newRetrofitInstance().create(RemoteFullDataApiService.class),
                 mPreferencesHelper
         );
     }

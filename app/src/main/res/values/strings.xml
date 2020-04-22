@@ -42,5 +42,6 @@
     <string name="lbl_get_pro_version_title">Buy a professional version to remove ads and motivate us to work hard to improve the product better.</string>
     <string name="msg_empty_data">No data!</string>
     <string name="lbl_history">History</string>
+    <string name="current">Chỉ số aqi local</string>
 
 </resources>
