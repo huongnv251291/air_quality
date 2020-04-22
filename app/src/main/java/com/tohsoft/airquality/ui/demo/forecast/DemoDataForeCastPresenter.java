@@ -28,20 +28,21 @@ public class DemoDataForeCastPresenter<V extends DemoDataForeCastMvpView> extend
 
     @Override
     public void loadData() {
+        if (ApplicationModules.getInstant().getStaticData() != null) {
+            updateForeCast(ApplicationModules.getInstant().getStaticData());
+            return;
+        }
         mCompositeDisposable.add(dataManager.getForecastData(mContext, "_C8tMLclLzNX3SMzLz9QPDXbNTUosLq4EAA", "Vietnam%2FHanoi%2FUSEmbassy").observeOn(AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribe(new Consumer<ResponseBody>() {
             @Override
             public void accept(ResponseBody responseBody) throws Exception {
                 Log.e("getForecastData", responseBody.toString());
-                    JSONObject jsonObject = new JSONObject(responseBody.byteString().toString());
-                    if (requestFail(jsonObject)) {
-                        getMvpView().requestFail();
-                    } else {
-                        JSONObject object = jsonObject.optJSONObject("forecast");
-                        if (object != null) {
-                                ForecastModel forecastList = ForecastModel.decode(object);
-                                getMvpView().updateCurrent(forecastList);
-                        }
-                    }
+                JSONObject jsonObject = new JSONObject(responseBody.string());
+                ApplicationModules.getInstant().updateStaticData(jsonObject);
+                if (requestFail(jsonObject)) {
+                    getMvpView().requestFail();
+                } else {
+                    updateForeCast(jsonObject);
+                }
             }
         }, new Consumer<Throwable>() {
             @Override
@@ -50,6 +51,14 @@ public class DemoDataForeCastPresenter<V extends DemoDataForeCastMvpView> extend
 
             }
         }));
+    }
+
+    private void updateForeCast(JSONObject jsonObject) {
+        JSONObject object = jsonObject.optJSONObject("forecast");
+        if (object != null) {
+            ForecastModel forecastList = ForecastModel.decode(object);
+            getMvpView().updateCurrent(forecastList);
+        }
     }
 
     private boolean requestFail(JSONObject jsonObject) {

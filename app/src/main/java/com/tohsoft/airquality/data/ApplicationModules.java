@@ -10,6 +10,8 @@ import com.tohsoft.airquality.data.network.RemoteApiService;
 import com.tohsoft.airquality.data.network.RemoteFullDataApiService;
 import com.tohsoft.airquality.data.network.RemoteRankingApiService;
 
+import org.json.JSONObject;
+
 /**
  * Created by Phong on 3/1/2017.
  */
@@ -20,6 +22,7 @@ public class ApplicationModules {
     private Context mContext;
     private PreferencesHelper mPreferencesHelper;
     private DataManager mDataManager;
+    private JSONObject mStaticData;
 
     public static ApplicationModules getInstant() {
         if (sApplicationModules == null) {
@@ -57,5 +60,13 @@ public class ApplicationModules {
 
     public void onDestroy() {
         sApplicationModules = null;
+    }
+
+    public void updateStaticData(JSONObject jsonObject) {
+        mStaticData = jsonObject;
+    }
+
+    public JSONObject getStaticData() {
+        return mStaticData;
     }
 }

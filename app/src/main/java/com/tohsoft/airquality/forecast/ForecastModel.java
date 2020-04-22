@@ -1,8 +1,11 @@
 package com.tohsoft.airquality.forecast;
 
+import android.annotation.SuppressLint;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -108,7 +111,7 @@ public class ForecastModel {
             this.records = new ArrayList<>();
             Iterator<Pair<Integer, Double>> it = list2.iterator();
             while (it.hasNext()) {
-                ForecastRecord record = new ForecastRecord( it.next().getLeft().intValue());
+                ForecastRecord record = new ForecastRecord(it.next().getLeft().intValue());
                 addRecord(record);
                 this.records.add(record);
             }
@@ -145,7 +148,7 @@ public class ForecastModel {
         public float wg;
         public float ws;
 
-        public ForecastRecord( int t2) {
+        public ForecastRecord(int t2) {
             this.ut = (long) t2;
         }
 
@@ -216,6 +219,13 @@ public class ForecastModel {
                 return t2;
             }
             return ((t1 + t2) + t3) / 3.0f;
+        }
+
+        @Override
+        public String toString() {
+            @SuppressLint("SimpleDateFormat") String main = new SimpleDateFormat("HH:mm").format(new Date(utime()));
+            return main + "   " + "PM25 Low :" + aqi1 + "  " + "PM25 high :" + aqi2 + "  " + "Nhiệt độ :" + t;
+
         }
 
         public int getAqi1() {
