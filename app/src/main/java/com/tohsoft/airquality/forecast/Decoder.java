@@ -1,6 +1,7 @@
 package com.tohsoft.airquality.forecast;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Decoder {
 
@@ -56,6 +57,10 @@ public class Decoder {
         return decode(s, 1, 0, 1);
     }
 
+    public static void main(String[] args) {
+        System.out.println(decode("decdkuskaaEHIHHHHHIFaafgfeddbaaaaaehhCKLICDAdbccbcaacccbaaACBCBBABBDBCadccaaaaaaaaCEFECCBaabddfgfeaababcdcABCCaaaaaaaaaaaaaabaaaaaaaaCBCadcdaabdbccbcaaaaaCCDCaaaaadededdcccaBCBBCCCDDaaaaaaaadedfffcaaaaaBEEDABBBBeBB",3,1587618000,3600));
+    }
+
     public static ArrayList<Pair<Integer, Double>> decode(String s, int dt, int ft, int st) {
         int v = 0;
         try {
@@ -91,6 +96,7 @@ public class Decoder {
                 av += v;
                 m.add(new Pair((t * st) + ft, Double.valueOf(((double) av) / ((double) scale))));
             }
+            System.out.println("number days :"+m.size());
             return m;
         } catch (Exception e) {
             e.printStackTrace();

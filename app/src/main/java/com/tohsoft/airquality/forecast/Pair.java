@@ -31,4 +31,12 @@ public class Pair<L, R> {
         }
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Pair{" +
+                "left=" + left +
+                ", right=" + right +
+                '}';
+    }
 }
