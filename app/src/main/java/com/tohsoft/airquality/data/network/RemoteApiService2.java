@@ -4,14 +4,12 @@ package com.tohsoft.airquality.data.network;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.tohsoft.airquality.data.Key;
-import com.tohsoft.airquality.data.models.MoreApps;
 import com.tohsoft.airquality.data.models.User;
-import com.tohsoft.airquality.data.models.breezometer.Data;
 import com.tohsoft.airquality.data.models.breezometer.Response;
-import com.tohsoft.airquality.data.models.breezometer.Weather;
+import com.tohsoft.airquality.data.models.iqair.Data;
+import com.tohsoft.airquality.data.models.iqair.Ranking;
 
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -25,13 +23,12 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
-import retrofit2.http.QueryMap;
 
 /**
  * Created by Phong on 11/9/2016.
  */
 
-public interface RemoteApiService {
+public interface RemoteApiService2 {
 
     @FormUrlEncoded
     @POST("user/login")
@@ -39,25 +36,16 @@ public interface RemoteApiService {
                            @Field("password") String password,
                            @Field("android_push_key") String android_push_key);
 
-    @GET("/air-quality/v2/current-conditions?features=breezometer_aqi,local_aqi,health_recommendations,sources_and_effects,pollutants_concentrations,pollutants_aqi_information")
-    Observable<Response<Data>> getBreezometerAirQuality(@Query("key") String key, @Query("lat") Double lat, @Query("lon") Double lon);
 
+    @GET("v2/city?key=" + Key.iqair_key)
+    Observable<Response<Data>> getIQAirQuality(@Query("city") String city, @Query("state") String state, @Query("country") String country);
 
-    @GET("/air-quality/v2/historical/hourly?features=breezometer_aqi,local_aqi,sources_and_effects,pollutants_concentrations,pollutants_aqi_information")
-    Observable<Response<List<Data>>> getBreezdometerHourly(@Query("key") String key, @Query("lat") Double lat, @Query("lon") Double lon, @Query("hours") int hours);
-
-    @GET("/air-quality/v2/forecast/hourly?features=breezometer_aqi,local_aqi,sources_and_effects,pollutants_concentrations,pollutants_aqi_information")
-    Observable<Response<List<Data>>> getBreezdometerForecast(@Query("key") String key, @Query("lat") Double lat, @Query("lon") Double lon, @Query("hours") int hours);
-
-    @GET("/weather/v1/current-conditions")
-    Observable<Response<Weather>> getBreezdometerWeather(@Query("key") String key, @Query("lat") Double lat, @Query("lon") Double lon);
-
-    @GET("moreapp.php")
-    Observable<MoreApps> moreApps(@QueryMap Map<String, String> params);
+    @GET("v2/city_ranking?key=" + Key.iqair_key)
+    Observable<Response<List<Ranking>>> getRanking();
 
 
     class Creator {
-        private static final String ENDPOINT = "https://api.breezometer.com";
+        private static final String ENDPOINT = "https://api.airvisual.com/";
 
         public static Retrofit newRetrofitInstance() {
             HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();

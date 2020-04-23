@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <RelativeLayout
+            android:id="@+id/rl_air_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="48dp"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tv_air_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_air_index"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_air_moderate"
+                android:layout_centerHorizontal="true"
+                android:text="AQI VN" />
+
+
+            <TextView
+                android:id="@+id/tv_air_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_air_index"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Current Pollution"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_air_quality"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:id="@+id/llpm25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="PM2.5\n(μg/m3)" />
+
+                <TextView
+                    android:id="@+id/tv_pm25_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llco"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="CO\n(ppb)" />
+
+                <TextView
+                    android:id="@+id/tvco_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llpm10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="PM10\n(μg/m3)" />
+
+                <TextView
+                    android:id="@+id/tv_pm10_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="O3\n(ppb)" />
+
+                <TextView
+                    android:id="@+id/tv_o3_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llso2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="SO2\n(ppb)" />
+
+                <TextView
+                    android:id="@+id/tv_so2_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llno2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="NO2\n(ppb)" />
+
+                <TextView
+                    android:id="@+id/tv_no2_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PM2.5" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Current Weather"
+            android:textStyle="bold" />
+
+        <include layout="@layout/item_weather" />
+
+        <TextView
+            android:id="@+id/tv_health_recommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Health recommendations"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/ll_health_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Forecast (24h)"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_forecast"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Hourly history (24h)"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ll_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_value"
+            android:layout_marginTop="16dp"
+            android:text="Ranking [Không hỗ trợ]"
+            android:textStyle="bold" />
+    </LinearLayout>
+</ScrollView>

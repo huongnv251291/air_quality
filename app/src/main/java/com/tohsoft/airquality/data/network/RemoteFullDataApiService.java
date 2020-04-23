@@ -93,8 +93,8 @@ public interface RemoteFullDataApiService {
                             return chain.proceed(request);
                         }
                     })
-                    .connectTimeout(3, TimeUnit.SECONDS)
-                    .readTimeout(3, TimeUnit.SECONDS);
+                    .connectTimeout(60, TimeUnit.SECONDS)
+                    .readTimeout(60, TimeUnit.SECONDS);
             /**
              * Need if ENDPOINT is https.
              */

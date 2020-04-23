@@ -7,6 +7,8 @@ import com.tohsoft.airquality.data.local.preference.PreferencesHelper;
 import com.tohsoft.airquality.data.network.DataManager;
 import com.tohsoft.airquality.data.network.RemoteAQIApiService;
 import com.tohsoft.airquality.data.network.RemoteApiService;
+import com.tohsoft.airquality.data.network.RemoteApiService2;
+import com.tohsoft.airquality.data.network.RemoteApiService3;
 import com.tohsoft.airquality.data.network.RemoteFullDataApiService;
 import com.tohsoft.airquality.data.network.RemoteRankingApiService;
 
@@ -54,6 +56,8 @@ public class ApplicationModules {
                 RemoteAQIApiService.Creator.newRetrofitInstance().create(RemoteAQIApiService.class),
                 RemoteRankingApiService.Creator.newRetrofitInstance().create(RemoteRankingApiService.class),
                 RemoteFullDataApiService.Creator.newRetrofitInstance().create(RemoteFullDataApiService.class),
+                RemoteApiService2.Creator.newRetrofitInstance().create(RemoteApiService2.class),
+                RemoteApiService3.Creator.newRetrofitInstance().create(RemoteApiService3.class),
                 mPreferencesHelper
         );
     }

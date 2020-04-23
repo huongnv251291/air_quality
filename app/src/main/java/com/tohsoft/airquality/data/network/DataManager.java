@@ -13,14 +13,19 @@ import android.view.WindowManager;
 
 import com.blankj.utilcode.util.NetworkUtils;
 import com.tohsoft.airquality.BuildConfig;
+import com.tohsoft.airquality.data.Key;
 import com.tohsoft.airquality.data.local.preference.PreferencesHelper;
 import com.tohsoft.airquality.data.models.MoreApps;
 import com.tohsoft.airquality.data.models.RankingCountry;
 import com.tohsoft.airquality.data.models.RoundMap;
 import com.tohsoft.airquality.data.models.User;
+import com.tohsoft.airquality.data.models.breezometer.Data;
+import com.tohsoft.airquality.data.models.breezometer.Weather;
+import com.tohsoft.airquality.data.models.iqair.Ranking;
 import com.tohsoft.airquality.forecast.AqiSettings;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TimeZone;
 
@@ -45,12 +50,19 @@ public class DataManager {
     private RemoteRankingApiService mRemoteRankingApiService;
     private RemoteFullDataApiService mRemoteFullDataApiService;
     private PreferencesHelper mPreferencesHelper;
+    private RemoteApiService2 mRemoteApiService2;
+    private RemoteApiService3 mRemoteApiService3;
 
-    public DataManager(RemoteApiService remoteApiService, RemoteAQIApiService mRemoteAQIApiService, RemoteRankingApiService mRemoteRankingApiService, RemoteFullDataApiService mRemoteFullDataApiService, PreferencesHelper preferencesHelper) {
+    public DataManager(RemoteApiService remoteApiService, RemoteAQIApiService mRemoteAQIApiService,
+                       RemoteRankingApiService mRemoteRankingApiService, RemoteFullDataApiService mRemoteFullDataApiService,
+                       RemoteApiService2 mRemoteApiService2, RemoteApiService3 mRemoteApiService3,
+                       PreferencesHelper preferencesHelper) {
         this.mRemoteApiService = remoteApiService;
         this.mRemoteAQIApiService = mRemoteAQIApiService;
         this.mRemoteRankingApiService = mRemoteRankingApiService;
         this.mRemoteFullDataApiService = mRemoteFullDataApiService;
+        this.mRemoteApiService2 = mRemoteApiService2;
+        this.mRemoteApiService3 = mRemoteApiService3;
         this.mPreferencesHelper = preferencesHelper;
     }
 
@@ -91,7 +103,7 @@ public class DataManager {
             }
             s.append(temp.getLatitude()).append(",").append(temp.getLongitude());
         }
-        return mRemoteAQIApiService.getMapBound( tokenwaqi,s.toString());
+        return mRemoteAQIApiService.getMapBound(tokenwaqi, s.toString());
     }
 
     @SuppressLint("HardwareIds")
@@ -125,5 +137,37 @@ public class DataManager {
         Map<String, String> params = new HashMap<>();
         params.put("app_id", BuildConfig.APPLICATION_ID);
         return mRemoteApiService.moreApps(params);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<Data>> getBreezometerAirQuality(Double lat, Double lon) {
+        return mRemoteApiService.getBreezometerAirQuality(Key.getKeyBreezometer(),lat, lon);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<List<Data>>> getBreezometerHourly(Double lat, Double lon, int hours) {
+        return mRemoteApiService.getBreezdometerHourly(Key.getKeyBreezometer(),lat, lon, hours);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<List<Data>>> getBreezometerForecast(Double lat, Double lon, int hours) {
+        return mRemoteApiService.getBreezdometerForecast(Key.getKeyBreezometer(),lat, lon, hours);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<Weather>> getBreezometerWeather(Double lat, Double lon) {
+        return mRemoteApiService.getBreezdometerWeather(Key.getKeyBreezometer(),lat, lon);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<com.tohsoft.airquality.data.models.iqair.Data>> getIQAirQuality(String city, String state, String country) {
+        return mRemoteApiService2.getIQAirQuality(city, state, country);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<List<Ranking>>> getIQAirRanking() {
+        return mRemoteApiService2.getRanking();
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.ambee.Data> getAmbeeAirQuality(Double lat, Double lng) {
+        return mRemoteApiService3.getAirQuality(lat, lng);
+    }
+
+    public Observable<com.tohsoft.airquality.data.models.breezometer.Response<com.tohsoft.airquality.data.models.ambee.Weather>> getAmbeeWeather(Double lat, Double lng) {
+        return mRemoteApiService3.getWeather(lat, lng);
     }
 }
