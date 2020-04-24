@@ -44,8 +44,8 @@ public interface RemoteRankingApiService {
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
             OkHttpClient.Builder builder = new OkHttpClient.Builder()
                     .addInterceptor(interceptor)
-                    .connectTimeout(3, TimeUnit.SECONDS)
-                    .readTimeout(3, TimeUnit.SECONDS);
+                    .connectTimeout(60, TimeUnit.SECONDS)
+                    .readTimeout(60, TimeUnit.SECONDS);
             /**
              * Need if ENDPOINT is https.
              */
