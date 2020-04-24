@@ -50,6 +50,11 @@ public class Decoder {
         }
     }
 
+    /**
+     *
+     * @param s string for decode
+     * @return
+     */
     public static ArrayList<Pair<Integer, Double>> decode(String s) {
         if (s == null || s.length() == 0) {
             return null;
@@ -61,6 +66,14 @@ public class Decoder {
         System.out.println(decode("decdkuskaaEHIHHHHHIFaafgfeddbaaaaaehhCKLICDAdbccbcaacccbaaACBCBBABBDBCadccaaaaaaaaCEFECCBaabddfgfeaababcdcABCCaaaaaaaaaaaaaabaaaaaaaaCBCadcdaabdbccbcaaaaaCCDCaaaaadededdcccaBCBBCCCDDaaaaaaaadedfffcaaaaaBEEDABBBBeBB",3,1587618000,3600));
     }
 
+    /**
+     *
+     * @param s string for decode
+     * @param dt khoang thoi gian giua 2 lan so lieu
+     * @param ft thoi gian bat dau quan trac
+     * @param st thoi gian gio (3600)
+     * @return
+     */
     public static ArrayList<Pair<Integer, Double>> decode(String s, int dt, int ft, int st) {
         int v = 0;
         try {

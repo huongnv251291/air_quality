@@ -30,15 +30,7 @@ import retrofit2.http.Query;
 
 public interface RemoteFullDataApiService {
     // có 2 v là v10.json data cơ bản và v11.json full data
-    //    http://mapidroid.aqicn.org/aqicn/json/android/_C8tMLclLzNX3SMzLz9QPDXbNTUosLq4EAA/
-    //    v11.json?
-    //    cityID=Vietnam%2FHanoi%2FUSEmbassy
-    //    &lang=vi
-    //    &package=Asia
-    //    &appv=1
-    //    &appn=1.0
-    //    &tz=25200000
-    //    &metrics=1080,2049,3.0
+    //    http://mapidroid.aqicn.org/aqicn/json/android/_C8tMLclLzNX3SMzLzwQA/v11.json?cityID=Vietnam%2FHanoi&lang=vi&package=Asia&appv=1&appn=1.0&tz=25200000&metrics=1080,2049,3.0
 //    &devid=f2f3ebf92e4e56d4
 //    @GET("aqicn/json/android/{keyCity}/{versionApi}")
 //    Observable<ResponseBody> fullData(@Path("keyCity") String tokenKeyCity,

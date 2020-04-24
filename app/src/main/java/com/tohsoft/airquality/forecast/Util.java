@@ -169,4 +169,10 @@ public class Util {
         }
         return 2;
     }
+
+    public static String getMetricForRequest(Context ctx) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        ((WindowManager) ctx.getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
+        return metrics.widthPixels + "," + metrics.heightPixels + "," + metrics.density;
+    }
 }

@@ -23,6 +23,7 @@ import com.tohsoft.airquality.data.models.breezometer.Data;
 import com.tohsoft.airquality.data.models.breezometer.Weather;
 import com.tohsoft.airquality.data.models.iqair.Ranking;
 import com.tohsoft.airquality.forecast.AqiSettings;
+import com.tohsoft.airquality.forecast.Util;
 
 import java.util.HashMap;
 import java.util.List;
@@ -108,9 +109,8 @@ public class DataManager {
 
     @SuppressLint("HardwareIds")
     public Observable<ResponseBody> getForecastData(Context ctx, String tokenKeyCity, String cityId) {
-        DisplayMetrics metrics = new DisplayMetrics();
-        ((WindowManager) ctx.getSystemService(WINDOW_SERVICE)).getDefaultDisplay().getMetrics(metrics);
-        String metric = metrics.widthPixels + "," + metrics.heightPixels + "," + metrics.density;
+        String metric;
+         metric = Util.getMetricForRequest(ctx);
         try {
             if (((ConnectivityManager) ctx.getSystemService(CONNECTIVITY_SERVICE)).getNetworkInfo(ConnectivityManager.TYPE_WIFI).isConnected()) {
                 metric = metric + "&wifi";
