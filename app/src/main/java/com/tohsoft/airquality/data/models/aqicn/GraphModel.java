@@ -1,6 +1,6 @@
 package com.tohsoft.airquality.data.models.aqicn;
 
-import com.tohsoft.airquality.aqicnultis.Decoder;
+import com.tohsoft.airquality.aqicnutils.Decoder;
 
 import org.json.JSONObject;
 

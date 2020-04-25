@@ -1,4 +1,4 @@
-package com.tohsoft.airquality.aqicnultis;
+package com.tohsoft.airquality.aqicnutils;
 
 import android.content.Context;
 import android.content.Intent;

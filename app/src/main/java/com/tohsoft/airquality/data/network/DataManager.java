@@ -20,8 +20,8 @@ import com.tohsoft.airquality.data.models.iqair.Ranking;
 import com.tohsoft.airquality.data.network.aqicn.RemoteAQIApiService;
 import com.tohsoft.airquality.data.network.aqicn.RemoteFullDataApiService;
 import com.tohsoft.airquality.data.network.aqicn.RemoteRankingApiService;
-import com.tohsoft.airquality.aqicnultis.AqiSettings;
-import com.tohsoft.airquality.aqicnultis.Util;
+import com.tohsoft.airquality.aqicnutils.AqiSettings;
+import com.tohsoft.airquality.aqicnutils.Util;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +32,7 @@ import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
-import static com.tohsoft.airquality.aqicnultis.Util.getUrlEncodedLang;
+import static com.tohsoft.airquality.aqicnutils.Util.getUrlEncodedLang;
 
 /**
  * Created by Phong on 11/9/2016.

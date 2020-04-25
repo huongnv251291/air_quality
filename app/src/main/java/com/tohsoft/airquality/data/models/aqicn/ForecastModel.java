@@ -2,7 +2,7 @@ package com.tohsoft.airquality.data.models.aqicn;
 
 import android.annotation.SuppressLint;
 
-import com.tohsoft.airquality.aqicnultis.Decoder;
+import com.tohsoft.airquality.aqicnutils.Decoder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
