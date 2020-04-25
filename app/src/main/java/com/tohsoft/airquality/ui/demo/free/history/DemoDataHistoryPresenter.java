@@ -83,3 +83,4 @@ public class DemoDataHistoryPresenter<V extends DemoDataHistoryMvpView> extends 
         return TextUtils.equals(jsonObject.optString("data", ""), "error");
     }
 }
+

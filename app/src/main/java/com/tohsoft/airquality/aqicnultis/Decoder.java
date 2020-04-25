@@ -14,6 +14,10 @@ public class Decoder {
         return decode(string,3,ft,3600);
     }
 
+    public static ArrayList<Pair<Integer, Double>> decodeHistory(String data) {
+        return decode(data);
+    }
+
     static class Parser {
         int i = 0;
         int l;

@@ -31,7 +31,7 @@ public class GraphModel {
             }
             String polID = graphData.getString("n");
             String data = graphData.getString("d");
-            return new GraphModel(polID, Decoder.decode(data), new Date((3600 + utime) * 1000), (int) hourOffset);
+            return new GraphModel(polID, Decoder.decodeHistory(data), new Date((3600 + utime) * 1000), (int) hourOffset);
         } catch (Exception e) {
             e.printStackTrace();
             return null;
