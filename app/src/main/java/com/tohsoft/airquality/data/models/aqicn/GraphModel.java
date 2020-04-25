@@ -1,7 +1,6 @@
-package com.tohsoft.airquality.data.models;
+package com.tohsoft.airquality.data.models.aqicn;
 
-import com.tohsoft.airquality.forecast.Decoder;
-import com.tohsoft.airquality.forecast.Pair;
+import com.tohsoft.airquality.aqicnultis.Decoder;
 
 import org.json.JSONObject;
 

@@ -6,7 +6,7 @@ import android.util.Log;
 
 import com.tohsoft.airquality.data.ApplicationModules;
 import com.tohsoft.airquality.data.network.DataManager;
-import com.tohsoft.airquality.forecast.ForecastModel;
+import com.tohsoft.airquality.data.models.aqicn.ForecastModel;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 
 import org.json.JSONObject;

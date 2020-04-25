@@ -1,4 +1,4 @@
-package com.tohsoft.airquality.forecast;
+package com.tohsoft.airquality.aqicnultis;
 
 import android.content.Context;
 import android.location.Criteria;

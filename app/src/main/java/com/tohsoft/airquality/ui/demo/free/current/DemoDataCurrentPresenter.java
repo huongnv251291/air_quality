@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.tohsoft.airquality.data.ApplicationModules;
-import com.tohsoft.airquality.data.models.AqiOfCity;
+import com.tohsoft.airquality.data.models.aqicn.AqiOfCity;
 import com.tohsoft.airquality.data.network.DataManager;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 

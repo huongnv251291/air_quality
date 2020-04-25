@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tohsoft.airquality.R;
-import com.tohsoft.airquality.forecast.ForecastModel;
+import com.tohsoft.airquality.data.models.aqicn.ForecastModel;
 import com.tohsoft.airquality.ui.base.BaseFragmentSetup;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 import com.tohsoft.airquality.ui.demo.free.forecast.adapter.AdapterForecast;

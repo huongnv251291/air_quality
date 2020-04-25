@@ -5,25 +5,23 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.location.Location;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.provider.Settings;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
-import android.view.WindowManager;
 
-import com.blankj.utilcode.util.NetworkUtils;
 import com.tohsoft.airquality.BuildConfig;
 import com.tohsoft.airquality.data.Key;
 import com.tohsoft.airquality.data.local.preference.PreferencesHelper;
 import com.tohsoft.airquality.data.models.MoreApps;
-import com.tohsoft.airquality.data.models.RankingCountry;
-import com.tohsoft.airquality.data.models.RoundMap;
+import com.tohsoft.airquality.data.models.aqicn.RankingCountry;
+import com.tohsoft.airquality.data.models.aqicn.RoundMap;
 import com.tohsoft.airquality.data.models.User;
 import com.tohsoft.airquality.data.models.breezometer.Data;
 import com.tohsoft.airquality.data.models.breezometer.Weather;
 import com.tohsoft.airquality.data.models.iqair.Ranking;
-import com.tohsoft.airquality.forecast.AqiSettings;
-import com.tohsoft.airquality.forecast.Util;
+import com.tohsoft.airquality.data.network.aqicn.RemoteAQIApiService;
+import com.tohsoft.airquality.data.network.aqicn.RemoteFullDataApiService;
+import com.tohsoft.airquality.data.network.aqicn.RemoteRankingApiService;
+import com.tohsoft.airquality.aqicnultis.AqiSettings;
+import com.tohsoft.airquality.aqicnultis.Util;
 
 import java.util.HashMap;
 import java.util.List;
@@ -31,12 +29,10 @@ import java.util.Map;
 import java.util.TimeZone;
 
 import io.reactivex.Observable;
-import okhttp3.Response;
 import okhttp3.ResponseBody;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
-import static android.content.Context.WINDOW_SERVICE;
-import static com.tohsoft.airquality.forecast.Util.getUrlEncodedLang;
+import static com.tohsoft.airquality.aqicnultis.Util.getUrlEncodedLang;
 
 /**
  * Created by Phong on 11/9/2016.

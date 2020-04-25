@@ -1,4 +1,4 @@
-package com.tohsoft.airquality.data.network;
+package com.tohsoft.airquality.data.network.aqicn;
 
 
 import com.google.gson.Gson;

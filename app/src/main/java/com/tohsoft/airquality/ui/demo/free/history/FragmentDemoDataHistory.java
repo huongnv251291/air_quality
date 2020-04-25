@@ -6,13 +6,11 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.tohsoft.airquality.R;
-import com.tohsoft.airquality.data.models.GraphModel;
+import com.tohsoft.airquality.data.models.aqicn.GraphModel;
 import com.tohsoft.airquality.ui.base.BaseFragmentSetup;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 import com.tohsoft.airquality.ui.demo.free.history.adapter.AdapterHistory;

@@ -9,7 +9,7 @@ import androidx.appcompat.widget.AppCompatTextView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tohsoft.airquality.R;
-import com.tohsoft.airquality.data.models.CityRanking;
+import com.tohsoft.airquality.data.models.aqicn.CityRanking;
 
 import java.util.ArrayList;
 import java.util.List;

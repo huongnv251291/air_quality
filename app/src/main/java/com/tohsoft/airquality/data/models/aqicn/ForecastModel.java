@@ -1,6 +1,8 @@
-package com.tohsoft.airquality.forecast;
+package com.tohsoft.airquality.data.models.aqicn;
 
 import android.annotation.SuppressLint;
+
+import com.tohsoft.airquality.aqicnultis.Decoder;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -87,9 +89,9 @@ public class ForecastModel {
                 while (keys.hasNext()) {
                     String p = keys.next();
                     JSONArray a = aqi.getJSONArray(p);
-                    model2.add(p + ".low", Decoder.decode(a.getString(0), 3, ft, 3600));
+                    model2.add(p + ".low", Decoder.decodePm25(a.getString(0), ft));
                     if (a.length() > 1) {
-                        model2.add(p + ".high", Decoder.decode(a.getString(1), 3, ft, 3600));
+                        model2.add(p + ".high", Decoder.decodePm25(a.getString(1), ft));
                     }
                 }
             }
@@ -97,7 +99,7 @@ public class ForecastModel {
             Iterator<String> keys2 = w.keys();
             while (keys2.hasNext()) {
                 String p2 = keys2.next();
-                model2.add(p2, Decoder.decode(w.getString(p2), 1, ft, 3600));
+                model2.add(p2, Decoder.decodeWind(w.getString(p2), ft));
             }
             return model2;
         } catch (Exception e) {

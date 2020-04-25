@@ -1,9 +1,18 @@
-package com.tohsoft.airquality.forecast;
+package com.tohsoft.airquality.aqicnultis;
+
+import com.tohsoft.airquality.data.models.aqicn.Pair;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Decoder {
+
+    public static ArrayList<Pair<Integer, Double>> decodeWind(String string,  int ft) {
+        return decode(string,1,ft,3600);
+    }
+
+    public static ArrayList<Pair<Integer, Double>> decodePm25(String string, int ft) {
+        return decode(string,3,ft,3600);
+    }
 
     static class Parser {
         int i = 0;
@@ -107,7 +116,7 @@ public class Decoder {
                 }
                 t += dt;
                 av += v;
-                m.add(new Pair((t * st) + ft, Double.valueOf(((double) av) / ((double) scale))));
+                m.add(new Pair<>((t * st) + ft, Double.valueOf(((double) av) / ((double) scale))));
             }
             System.out.println("number days :"+m.size());
             return m;

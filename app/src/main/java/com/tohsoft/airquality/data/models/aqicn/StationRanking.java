@@ -1,5 +1,5 @@
 
-package com.tohsoft.airquality.data.models;
+package com.tohsoft.airquality.data.models.aqicn;
 
 import java.util.List;
 

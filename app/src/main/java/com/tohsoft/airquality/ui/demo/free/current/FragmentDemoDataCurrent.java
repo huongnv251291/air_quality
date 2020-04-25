@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import com.tohsoft.airquality.R;
-import com.tohsoft.airquality.data.models.AqiOfCity;
+import com.tohsoft.airquality.data.models.aqicn.AqiOfCity;
 import com.tohsoft.airquality.ui.base.BaseFragmentSetup;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 

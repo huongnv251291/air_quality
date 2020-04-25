@@ -1,13 +1,10 @@
-package com.tohsoft.airquality.data.network;
+package com.tohsoft.airquality.data.network.aqicn;
 
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.tohsoft.airquality.data.models.MoreApps;
-import com.tohsoft.airquality.data.models.RankingCountry;
-import com.tohsoft.airquality.data.models.User;
+import com.tohsoft.airquality.data.models.aqicn.RankingCountry;
 
-import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -16,12 +13,8 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Path;
-import retrofit2.http.QueryMap;
 
 /**
  * Created by Haku on 15/4/2020.

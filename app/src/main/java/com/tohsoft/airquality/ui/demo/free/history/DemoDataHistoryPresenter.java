@@ -1,15 +1,11 @@
 package com.tohsoft.airquality.ui.demo.free.history;
 
 import android.content.Context;
-import android.location.Location;
-import android.location.LocationManager;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.google.gson.JsonObject;
 import com.tohsoft.airquality.data.ApplicationModules;
-import com.tohsoft.airquality.data.models.GraphModel;
-import com.tohsoft.airquality.data.models.RoundMap;
+import com.tohsoft.airquality.data.models.aqicn.GraphModel;
 import com.tohsoft.airquality.data.network.DataManager;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 

@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.tohsoft.airquality.R;
-import com.tohsoft.airquality.data.models.GraphModel;
+import com.tohsoft.airquality.data.models.aqicn.GraphModel;
 
 import java.util.ArrayList;
 import java.util.List;

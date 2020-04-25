@@ -1,4 +1,4 @@
-package com.tohsoft.airquality.forecast;
+package com.tohsoft.airquality.data.models.aqicn;
 
 public class Pair<L, R> {
     private final L left;

@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import com.tohsoft.airquality.data.ApplicationModules;
-import com.tohsoft.airquality.data.models.RankingCountry;
+import com.tohsoft.airquality.data.models.aqicn.RankingCountry;
 import com.tohsoft.airquality.data.network.DataManager;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 

@@ -22,8 +22,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.tohsoft.airquality.R;
 import com.tohsoft.airquality.data.ApplicationModules;
-import com.tohsoft.airquality.data.models.Datum;
-import com.tohsoft.airquality.data.models.RoundMap;
+import com.tohsoft.airquality.data.models.aqicn.Datum;
+import com.tohsoft.airquality.data.models.aqicn.RoundMap;
 import com.tohsoft.airquality.data.network.DataManager;
 import com.tohsoft.airquality.ui.base.BasePresenter;
 

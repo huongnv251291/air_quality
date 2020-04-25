@@ -1,4 +1,4 @@
-package com.tohsoft.airquality.forecast;
+package com.tohsoft.airquality.aqicnultis;
 
 import android.content.Context;
 import android.content.Intent;
@@ -149,6 +149,7 @@ public class Util {
                 try {
                     v = extras.get(e).toString();
                 } catch (Exception e2) {
+                    e2.printStackTrace();
                 }
                 se = se + e + ":" + v + ", ";
             }
